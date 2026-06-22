@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世界杯 · 清晰看到每一场</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif; background: #f4f6f9; color: #1e293b; line-height: 1.6; }
+        a { color: #b8252c; text-decoration: none; font-weight: 500; transition: 0.2s; }
+        a:hover { color: #8b1a20; text-decoration: underline; }
+
+        /* hero 区 – 深色头图 */
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #2d1f1f 100%);
+            padding: 3.5rem 1.5rem;
+            text-align: center;
+            color: #f1f5f9;
+            border-bottom: 6px solid #b8252c;
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+        .hero p {
+            max-width: 680px;
+            margin: 0 auto 1.6rem;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        .hero .badge {
+            display: inline-block;
+            background: #b8252c;
+            color: #fff;
+            padding: 0.4rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            margin-top: 0.4rem;
+        }
+
+        /* 正文容器 */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 3rem;
+        }
+
+        /* 优势区 – 三卡片 */
+        .advantage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.8rem;
+            margin-bottom: 3rem;
+        }
+        .card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 1.8rem 1.5rem;
+            box-shadow: 0 10px 25px -8px rgba(0,0,0,0.08);
+            border: 1px solid #e9edf2;
+            transition: 0.25s;
+        }
+        .card:hover { transform: translateY(-4px); box-shadow: 0 18px 30px -12px rgba(0,0,0,0.12); }
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.6rem;
+            color: #0f172a;
+        }
+        .card h3 span { color: #b8252c; margin-right: 0.4rem; }
+        .card p { color: #475569; font-size: 0.95rem; }
+
+        /* 说明区 – 混合排版 */
+        .intro-block {
+            background: #fff;
+            border-radius: 24px;
+            padding: 2.2rem 2rem;
+            margin-bottom: 2.8rem;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.03);
+            border-left: 5px solid #b8252c;
+        }
+        .intro-block h2 {
+            font-size: 1.7rem;
+            margin-bottom: 1rem;
+            color: #0f172a;
+        }
+        .intro-block p {
+            margin-bottom: 1rem;
+            color: #334155;
+        }
+        .intro-block .highlight-link {
+            background: #fef2f2;
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border-radius: 30px;
+            font-weight: 500;
+        }
+
+        /* FAQ 摘要 – 折叠风格 */
+        .faq-section {
+            margin-top: 1rem;
+            margin-bottom: 2.5rem;
+        }
+        .faq-section h2 {
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+            color: #0f172a;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+        .faq-item {
+            background: #fff;
+            border-radius: 16px;
+            padding: 1rem 1.5rem;
+            margin-bottom: 0.8rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+            border: 1px solid #eef2f6;
+        }
+        .faq-item strong {
+            display: block;
+            font-size: 1.05rem;
+            margin-bottom: 0.2rem;
+            color: #0f172a;
+        }
+        .faq-item p {
+            margin: 0;
+            color: #475569;
+            font-size: 0.93rem;
+        }
+
+        /* 底部链接 */
+        .footer-links {
+            text-align: center;
+            border-top: 1px solid #d1d9e6;
+            padding-top: 2rem;
+            margin-top: 1.5rem;
+        }
+        .footer-links p {
+            font-size: 0.95rem;
+            color: #64748b;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            .intro-block { padding: 1.6rem 1.2rem; }
+            .card { padding: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- hero 区 -->
+<section class="hero">
+    <h1>⚽ 世界杯 · 你的观赛捷径</h1>
+    <p>从赛程追踪到直播入口，用最直接的方式锁定每一场关键对决。不再切换多个页面，一个站点就够了。</p>
+    <span class="badge">球迷真实选择 · 稳定陪伴</span>
+</section>
+
+<!-- 主内容 -->
+<div class="container">
+
+    <!-- 优势区 -->
+    <div class="advantage-grid">
+        <div class="card">
+            <h3><span>⏱</span>即时赛果</h3>
+            <p>比赛结束一分钟内更新比分、红黄牌与换人细节，无需刷新页面，数据自动推送。</p>
+        </div>
+        <div class="card">
+            <h3><span>📺</span>多源直播</h3>
+            <p>聚合多个稳定播放源，遇到卡顿可快速切换，不错过任何一粒进球。</p>
+        </div>
+        <div class="card">
+            <h3><span>🗓️</span>完整赛历</h3>
+            <p>预选赛、小组赛到决赛，每个阶段的时间、场地、电视台信息一目了然。</p>
+        </div>
+    </div>
+
+    <!-- 说明区 – 从用户角度展开（快速识别用途） -->
+    <div class="intro-block">
+        <h2>打开这个页面，你在找什么？</h2>
+        <p>
+            很多人第一次来到 <strong>cnwebs-ssl-sjb.com</strong> 时，只是想确认今晚的比赛几点开球，或者找一个能流畅播放的链接。
+            这里没有复杂的会员体系，也没有眼花缭乱的广告弹窗。页面顶部直接列出当天焦点战，点击即可跳转到对应直播或回看。
+        </p>
+        <p>
+            如果你正在寻找关于 <a href="https://cnwebs-ssl-sjb.com">世界杯</a> 的可靠信息来源——包括赛程、分组、球队阵容及历史数据——这个站点把最常用的功能放在最显眼的位置。
+            不需要注册，不需要下载，打开浏览器就能用。
+        </p>
+        <p class="highlight-link">
+            💡 建议：把页面加入书签，赛事密集期能帮你省下不少搜索时间。
+        </p>
+    </div>
+
+    <!-- FAQ 摘要（4个典型问题） -->
+    <div class="faq-section">
+        <h2>你可能关心的几个问题</h2>
+        <div class="faq-item">
+            <strong>❓ 这里的直播源都免费吗？</strong>
+            <p>是的。所有列出的直播源均为公开可用渠道，你不需要付费或注册。但个别源可能因地域限制无法播放，建议尝试切换其他线路。</p>
+        </div>
+        <div class="faq-item">
+            <strong>❓ 赛程时间用的是哪个时区？</strong>
+            <p>页面默认显示北京时间 (UTC+8)。如果你在海外，可以手动切换顶部时区选项，赛程会自动换算。</p>
+        </div>
+        <div class="faq-item">
+            <strong>❓ 错过直播还能看回放吗？</strong>
+            <p>大部分重要比赛结束后24小时内会上传全场回放及集锦，位置在“战报”栏目下。部分版权严格的场次可能会延迟或下架。</p>
+        </div>
+        <div class="faq-item">
+            <strong>❓ 手机端和电脑端体验一样吗？</strong>
+            <p>页面适配了手机与平板，核心功能一致。直播播放器在手机上会自动进入全屏模式，操作更顺手。</p>
+        </div>
+    </div>
+
+    <!-- 底部链接 -->
+    <div class="footer-links">
+        <p>
+            ⚡ 如果你只想快速找到最近的赛程和直播入口，直接前往
+            <a href="https://cnwebs-ssl-sjb.com">世界杯</a> 频道。
+            <br>
+            <span style="font-size:0.85rem; color:#94a3b8;">页面内容仅供信息参考，所有赛事信息以官方公布为准。</span>
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>
